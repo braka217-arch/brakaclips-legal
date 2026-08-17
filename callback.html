@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Redirigiendo a brakaclips</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 640px; margin: 0 auto; padding: 64px 24px; line-height: 1.6; }
+  code { word-break: break-all; }
+  a { color: #d3204f; }
+  .muted { opacity: .7; font-size: .9rem; }
+</style>
+</head>
+<body>
+<h1>Redirigiendo...</h1>
+<p>Devolviendo la autorizacion de TikTok a tu aplicacion local.</p>
+<p class="muted">Si no pasa nada en unos segundos, hace clic aca:
+  <a id="link" href="#">abrir manualmente</a>.
+  Necesitas que el script este corriendo en el puerto 8787.</p>
+<script>
+  var target = "http://localhost:8787/callback" + window.location.search + window.location.hash;
+  document.getElementById("link").setAttribute("href", target);
+  window.location.replace(target);
+</script>
+</body>
+</html>
